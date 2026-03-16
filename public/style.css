@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
+    color: #262626;
+    padding-top: 70px; 
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: white;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    font-family: 'Georgia', serif; 
+}
+
+.create-btn {
+    background-color: #0095f6;
+    color: white !important;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+
+.post {
+    background: white;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.post:hover {
+    /* Slightly lifts the card up */
+    transform: translateY(-4px); 
+    /* Adds a soft shadow to create depth */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.post-image-container {
+    width: 100%;
+    background-color: #efefef; /* Light grey if image takes a second to load */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-img {
+    width: 100%;
+    /* aspect-ratio: 1 / 1; Optional: makes all posts perfect squares like old Instagram */
+    height: 350px;         /* Fixed height */
+    object-fit: cover;     /* Crops the image to fill the 350px height perfectly */
+    object-position: center; /* Keeps the center of the photo visible */
+    display: block;
+}
+
+.post-footer {
+    padding: 12px;
+}
+
+.content {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #efefef;
+    padding-top: 10px;
+}
+
+.main-actions a {
+    color: #262626;
+    font-size: 0.85rem;
+    margin-right: 15px;
+}
+
+.delete-btn {
+    background: none;
+    background-color: blueviolet;
+    color: white;
+    
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c92f3b; 
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color:#262626;
+    font-weight: 600;
+    transition: all 0.2s ease ;
+    cursor: pointer;
+}

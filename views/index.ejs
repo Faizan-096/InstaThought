@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaThought Feed</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <h1>InstaThought</h1> 
+        <a href="/posts/new" class="create-btn">+ Create Post</a>
+    </nav>
+
+    <div class="feed-container">
+        <% for(post of posts) {%>
+            <div class="post">
+                <div class="post-header">
+                    <div class="profile-pic"></div>
+                    <h3 class="user">@<%= post.username %></h3>
+                </div>
+
+                <div class="post-image-container">
+                    <% if(post.image) { %>
+                        <img src="<%= post.image %>" class="post-img">
+                    <% } else { %>
+                        <div class="no-image-placeholder"></div>
+                    <% } %>
+                </div>
+
+                <div class="post-footer">
+                    <p class="content"><strong>@<%= post.username %></strong> <%= post.content %></p>
+                    
+                    <div class="post-actions">
+                        <div class="main-actions">
+                            <a href="/posts/<%= post.id %>">View Detail</a> 
+                            <a href="/posts/<%= post.id %>/edit">Edit</a>
+                        </div>
+                        <form method="POST" action="/posts/<%= post.id %>?_method=DELETE">
+                            <button class="delete-btn">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

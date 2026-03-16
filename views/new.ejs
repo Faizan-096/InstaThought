@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post | InstaThought</title>
+    <link rel="stylesheet" href="/new.css" />
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-card">
+            <h1>Create New Post</h1>
+            <p class="subtitle">Share your thoughts with the world</p>
+            
+            <form method="POST" action="/posts" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="@yourname" name="username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="content">What's on your mind?</label>
+                    <textarea id="content" placeholder="Write your post here..." name="content" rows="5" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label class="file-label">Add a Photo</label>
+                    <input type="file" name="image" class="file-input">
+                </div>
+
+                <button type="submit" class="submit-btn">Post to Feed</button>
+                <a href="/posts" class="cancel-link">Cancel</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

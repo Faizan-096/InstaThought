@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post | InstaThought</title>
+    <link rel="stylesheet" href="/edits.css" />
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-card">
+            <h2>Edit Your Post</h2>
+            
+            <div class="post-metadata">
+                <span class="meta-badge">ID: <%= post.id %></span>
+                <p class="meta-user">Editing as <strong>@<%= post.username %></strong></p>
+            </div>
+
+            <form method="POST" action="/posts/<%= post.id %>?_method=PATCH">
+                <div class="input-group">
+                    <label for="content">Update your caption</label>
+                    <textarea 
+                        name="content" 
+                        id="content" 
+                        rows="8" 
+                        placeholder="What's the new thought?"
+                    ><%= post.content %></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="submit-btn">Save Changes</button>
+                    <a href="/posts" class="cancel-link">Discard Edits</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Detail | InstaThought</title>
+    <link rel="stylesheet" href="/show.css" />
+</head>
+<body>
+    <div class="detail-container">
+        <a href="/posts" class="back-link">← Back to Feed</a>
+        
+        <div class="detail-card">
+            <div class="detail-header">
+                <div class="profile-circle"></div>
+                <div class="user-info">
+                    <h3 class="user">@<%= post.username %></h3>
+                    <span class="post-id-tag">Post ID: <%= post.id %></span>
+                </div>
+            </div>
+
+            <div class="detail-image-section">
+                <% if(post.image) { %>
+                    <img src="<%= post.image %>" class="detail-img">
+                <% } else { %>
+                    <div class="detail-placeholder">
+                        <p>No image shared</p>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="detail-content">
+                <p class="content-text"><%= post.content %></p>
+            </div>
+
+            <div class="detail-footer">
+                <a href="/posts/<%= post.id %>/edit" class="edit-btn">Edit Post</a>
+                <form method="POST" action="/posts/<%= post.id %>?_method=DELETE">
+                    <button class="delete-btn">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
