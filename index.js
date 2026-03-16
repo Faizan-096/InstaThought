@@ -5,8 +5,7 @@ const port = process.env.PORT || 3000;
 const multer = require("multer");
 const path = require("path");
 const { v4: uuidv4 } = require('uuid');
-const storage = multer.memoryStorage(); // No disk writing
-const upload = multer({ storage: storage });
+
 
 
 const methodOverride = require("method-override");
@@ -101,9 +100,8 @@ app.delete("/posts/:id", (req, res) => {
 
 
 
-
 app.listen(port, () => {
-    console.log('listening to port : 3000');
+    console.log(`Server is running on port ${port}`);
 });
 
 module.exports = app;
